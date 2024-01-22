@@ -19,13 +19,14 @@
     <meta name="description" content="在供应链领域，OFC系统扮演着承上启下的重要角色。对上承接各各类订单，对下派发生产任务，是履约链路上的核心系统，除此之外，OFC还负责管理生产、履约环节的关键信息，保障上下游系统能及时感知业务变化。 流程分析概括而言，一次网购交易包括：注册 -&gt; 导购 -&gt; 加购 -&gt; 提单 -&gt; 支付 -&gt; 接单 -&gt; 计划 -&gt; 调度 -&gt; 生产 -&gt; 配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="履约系统(OFC)架构设计">
-<meta property="og:url" content="http://example.com/2024/01/22/%E5%B1%A5%E7%BA%A6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:url" content="https://xiandui-wang.github.io/2024/01/22/%E5%B1%A5%E7%BA%A6%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="XD.Wang的技术空间">
 <meta property="og:description" content="在供应链领域，OFC系统扮演着承上启下的重要角色。对上承接各各类订单，对下派发生产任务，是履约链路上的核心系统，除此之外，OFC还负责管理生产、履约环节的关键信息，保障上下游系统能及时感知业务变化。 流程分析概括而言，一次网购交易包括：注册 -&gt; 导购 -&gt; 加购 -&gt; 提单 -&gt; 支付 -&gt; 接单 -&gt; 计划 -&gt; 调度 -&gt; 生产 -&gt; 配">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-22T08:21:11.541Z">
-<meta property="article:modified_time" content="2024-01-22T09:01:55.868Z">
+<meta property="article:modified_time" content="2024-01-22T09:13:47.221Z">
 <meta property="article:author" content="XD.Wang">
+<meta property="article:tag" content="交易履约">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -68,7 +69,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"xiandui-wang.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -287,6 +288,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" class="category-chain-item">技术总结</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%BA%A4%E6%98%93%E5%B1%A5%E7%BA%A6/" class="print-no-link">#交易履约</a>
+      
+    </div>
   
 </div>
 
@@ -297,7 +326,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>履约系统(OFC)架构设计</div>
-      <div>http://example.com/2024/01/22/履约系统建设路径/</div>
+      <div>https://xiandui-wang.github.io/2024/01/22/履约系统建设路径/</div>
     </div>
     <div class="license-meta">
       
