@@ -16,22 +16,22 @@
   <meta name="author" content="XD.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="总结常见架构问题和解法">
+    <meta name="description" content="如何搭建一个小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="架构评审关注点">
-<meta property="og:url" content="https://xiandui-wang.github.io/2024/06/24/%E6%9E%B6%E6%9E%84%E8%AF%84%E5%AE%A1%E5%85%B3%E6%B3%A8%E7%82%B9/index.html">
+<meta property="og:title" content="准备工作">
+<meta property="og:url" content="https://xiandui-wang.github.io/2024/06/24/%E5%BC%80%E5%A7%8B/index.html">
 <meta property="og:site_name" content="XD.Wang的技术空间">
-<meta property="og:description" content="总结常见架构问题和解法">
+<meta property="og:description" content="如何搭建一个小程序">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-24T02:08:02.011Z">
-<meta property="article:modified_time" content="2024-06-26T08:53:43.099Z">
+<meta property="article:published_time" content="2024-06-24T02:59:31.217Z">
+<meta property="article:modified_time" content="2024-07-09T09:39:30.851Z">
 <meta property="article:author" content="XD.Wang">
-<meta property="article:tag" content="架构设计">
+<meta property="article:tag" content="商分笔记">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>架构评审关注点 - XD.Wang的技术空间</title>
+  <title>准备工作 - XD.Wang的技术空间</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="架构评审关注点"></span>
+            <span id="subtitle" data-typed-text="准备工作"></span>
           
         </div>
 
@@ -208,7 +208,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-24 10:08" pubdate>
+        <time datetime="2024-06-24 10:59" pubdate>
           2024年6月24日 上午
         </time>
       </span>
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          249 字
+          604 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -268,18 +268,69 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">架构评审关注点</h1>
+            <h1 id="seo-header">准备工作</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本文总结常见的架构关注点</p>
-<h2 id="服务拆分"><a href="#服务拆分" class="headerlink" title="服务拆分"></a>服务拆分</h2><p>服务拆分考虑的核心问题时协作问题和管理问题  </p>
+                <p>1、搭建一个小程序<br>2、部署一个服务器<br>3、做好营销  </p>
+<h2 id="如何搭建小程序"><a href="#如何搭建小程序" class="headerlink" title="如何搭建小程序"></a>如何搭建小程序</h2><ol>
+<li><p><strong>注册微信小程序账号</strong></p>
 <ul>
-<li>问题拆解：复杂系统拆解成小系统管理难度更小，学习成本更低</li>
-<li>协作问题：业务发展带来组织细分，组织细分引发协作问题，不同组织在迭代节奏方面不完全匹配，迭代时互相影响较大，常见问题包括两类：运维协作和代码协作。代码协作上的常见问题是合代码冲突与交叉修改、影响面评估困难；运维协作上的问题是，无法给各自模块定制化运维（如发版、扩容），以及各模块间的功能共用底层资源可能互相影响</li>
-<li>系统异构：如果需要引入不同体系的技术栈，常见的方法就是约定协议后拆分相关业务到新的技术栈系统中</li>
+<li>访问<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">微信公众平台</a>，注册一个小程序账号。</li>
 </ul>
+</li>
+<li><p><strong>下载并安装开发者工具</strong></p>
+<ul>
+<li>下载<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">微信开发者工具</a>并安装。</li>
+</ul>
+</li>
+<li><p><strong>创建小程序项目</strong></p>
+<ul>
+<li>打开开发者工具，使用注册的微信小程序账号登录。</li>
+<li>点击“新建项目”，填写项目名称、目录和AppID（可在公众平台获取）。</li>
+</ul>
+</li>
+<li><p><strong>开发小程序</strong></p>
+<ul>
+<li>使用开发者工具提供的代码编辑器编写小程序代码。</li>
+<li>参考<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/">微信小程序开发文档</a>进行开发。</li>
+</ul>
+</li>
+<li><p><strong>调试和预览</strong></p>
+<ul>
+<li>在开发者工具中进行代码调试和预览。</li>
+</ul>
+</li>
+<li><p><strong>提交审核</strong></p>
+<ul>
+<li>开发完成后，提交小程序代码进行审核。</li>
+</ul>
+</li>
+<li><p><strong>发布上线</strong></p>
+<ul>
+<li>审核通过后，即可发布小程序上线。</li>
+</ul>
+</li>
+</ol>
+<h2 id="如何部署服务器"><a href="#如何部署服务器" class="headerlink" title="如何部署服务器"></a>如何部署服务器</h2><p>搭建小程序的后端服务器通常涉及以下几个步骤：</p>
+<p>选择服务器和操作系统：</p>
+<ul>
+<li>你可以选择云服务提供商（如阿里云、腾讯云、AWS等）来租用服务器。<br>选择适合的操作系统，如Linux（Ubuntu、CentOS等）。<br>安装必要的软件：</li>
+</ul>
+<p>安装Web服务器软件，如Nginx或Apache。</p>
+<ul>
+<li>安装数据库，如MySQL、PostgreSQL或MongoDB。<br>安装编程语言环境，如Node.js、Python、Java等。<br>编写后端代码：</li>
+</ul>
+<p>使用选择的编程语言编写后端逻辑，处理小程序的请求和数据。</p>
+<ul>
+<li>可以使用框架（如Express.js for Node.js、Django for Python等）来简化开发。<br>配置服务器：</li>
+</ul>
+<p>配置Web服务器以托管你的后端应用。<br>配置数据库以存储和检索数据。<br>配置防火墙和安全组以保护服务器。<br>部署应用：</p>
+<p>将你的后端代码部署到服务器上。<br>确保所有依赖项都已安装并配置正确。<br>测试和调试：</p>
+<p>使用工具（如Postman）测试API端点。<br>确保服务器能够正确处理请求并返回预期的响应。<br>域名和SSL证书：</p>
+<p>注册一个域名并将其指向你的服务器。<br>安装SSL证书以启用HTTPS，确保数据传输的安全性。<br>监控和维护：</p>
+<p>设置监控工具以跟踪服务器的性能和可用性。<br>定期更新软件和依赖项，以确保服务器的安全性和稳定性。</p>
 
                 
               </div>
@@ -298,7 +349,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" class="category-chain-item">技术总结</a>
+  <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" class="category-chain-item">小程序开发</a>
   
   
 
@@ -313,7 +364,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="print-no-link">#架构设计</a>
+        <a href="/tags/%E5%95%86%E5%88%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#商分笔记</a>
       
     </div>
   
@@ -325,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>架构评审关注点</div>
-      <div>https://xiandui-wang.github.io/2024/06/24/架构评审关注点/</div>
+      <div>准备工作</div>
+      <div>https://xiandui-wang.github.io/2024/06/24/开始/</div>
     </div>
     <div class="license-meta">
       
@@ -370,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/24/%E5%BC%80%E5%A7%8B/" title="准备工作">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">准备工作</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/24/%E8%AE%A2%E5%8D%95%E9%A2%86%E5%9F%9F%E5%BB%BA%E8%AE%BE/" title="订单系统(OFC)架构设计">
-                        <span class="hidden-mobile">订单系统(OFC)架构设计</span>
+                      <a href="/2024/06/24/%E6%9E%B6%E6%9E%84%E8%AF%84%E5%AE%A1%E5%85%B3%E6%B3%A8%E7%82%B9/" title="架构评审关注点">
+                        <span class="hidden-mobile">架构评审关注点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
